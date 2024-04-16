@@ -29,6 +29,7 @@ public class UserDaoJdbcImpl implements UserDao {
             System.out.println("Ошибка при создании таблицы пользователей: " + e.getMessage());
         }
     }
+
     public void dropUsersTable() {
         SessionFactory sessionFactory = Util.getSessionFactory();
         try (Session session = sessionFactory.openSession()) {
@@ -40,6 +41,7 @@ public class UserDaoJdbcImpl implements UserDao {
             System.out.println("Ошибка при удалении таблицы пользователей: " + e.getMessage());
         }
     }
+
     public void saveUser(String name, String lastName, byte age) {
         SessionFactory sessionFactory = Util.getSessionFactory();
         try (Session session = sessionFactory.openSession()) {
@@ -53,6 +55,7 @@ public class UserDaoJdbcImpl implements UserDao {
             System.out.println(e.getMessage());
         }
     }
+
     public User removeUserById(long id) {
         User user = new User();
         try {
@@ -67,6 +70,7 @@ public class UserDaoJdbcImpl implements UserDao {
         }
         return user;
     }
+
     @Override
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
@@ -82,8 +86,9 @@ public class UserDaoJdbcImpl implements UserDao {
         }
         return users;
     }
+
     public void cleanUsersTable() {
-        SessionFactory sessionFactory=Util.getSessionFactory();
+        SessionFactory sessionFactory = Util.getSessionFactory();
         try (Session session = Util.getSessionFactory().openSession()) {
             session.beginTransaction();
             int rowsAffected = session.createQuery("DELETE FROM User").executeUpdate();

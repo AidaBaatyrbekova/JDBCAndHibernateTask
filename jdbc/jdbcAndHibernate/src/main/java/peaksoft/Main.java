@@ -22,15 +22,15 @@ public class Main {
         userDaoHibernate.saveUser("Muhammet", "Karimov", (byte) 4);
         System.out.println("User Muhammet Karimov (age 4) был сохранен.");
 
-        //  System.out.println("очистки таблицы пользователей");
-        // userDaoHibernate.cleanUsersTable();
+        System.out.println("очистки таблицы пользователей");
+        userDaoHibernate.cleanUsersTable();
 
-       // System.out.println("Пользователь успешно удален:");
-       // long userIdToRemove = 1;
-       //userDaoHibernate.removeUserById(userIdToRemove);
+        System.out.println("Пользователь успешно удален:");
+        long userIdToRemove = 1;
+        userDaoHibernate.removeUserById(userIdToRemove);
 
-       // System.out.println("удаления таблицы пользователей");
-       // userDaoHibernate.dropUsersTable();
+        System.out.println("удаления таблицы пользователей");
+        userDaoHibernate.dropUsersTable();
     }
 
 }
