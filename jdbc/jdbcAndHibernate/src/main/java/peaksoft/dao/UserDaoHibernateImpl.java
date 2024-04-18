@@ -68,7 +68,7 @@ public class UserDaoHibernateImpl implements UserDao {
                 session.delete(user);
                 session.getTransaction().commit();
                 System.out.println("Пользователь успешно удален: " + user.getName() + " " + user.getLastName());
-                return user; // Возвращаем удаленного пользователя
+                return user;
             } else {
                 System.out.println("Пользователь с идентификатором " + id + " не найден.");
             }
